@@ -9,3 +9,4 @@ RUN curl -sL http://deb.nodesource.com/setup_6.x | bash - && \
     docker-php-ext-enable xdebug && \
     docker-php-ext-install bcmath pdo pdo_mysql intl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+
