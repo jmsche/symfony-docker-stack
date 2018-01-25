@@ -4,7 +4,7 @@ RUN curl -sL http://deb.nodesource.com/setup_6.x | bash - && \
     curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update -yqq && \
-    apt-get install -yqq --force-yes git unzip nodejs yarn libicu-dev && \
+    apt-get install -yqq --force-yes git unzip nodejs yarn libicu-dev libxml2-dev zlib1g-dev && \
     pecl install xdebug && \
     docker-php-ext-enable xdebug && \
     docker-php-ext-install bcmath pdo pdo_mysql intl && \
@@ -49,3 +49,15 @@ RUN pecl install imagick-3.4.3 && \
 RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng12-dev
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install gd
+
+RUN docker-php-ext-install ctype
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install iconv
+RUN docker-php-ext-install dom
+RUN docker-php-ext-install libxml
+RUN docker-php-ext-install simplexml
+RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install xml
+RUN docker-php-ext-install xmlreader
+RUN docker-php-ext-install xmlwriter
+RUN docker-php-ext-install zlib
