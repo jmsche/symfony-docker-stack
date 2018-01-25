@@ -54,7 +54,7 @@ RUN docker-php-ext-install ctype
 RUN docker-php-ext-install zip
 RUN docker-php-ext-install iconv
 RUN docker-php-ext-install dom
-RUN docker-php-ext-install libxml
+#RUN docker-php-ext-install libxml
 RUN docker-php-ext-install simplexml
 RUN docker-php-ext-install mbstring
 RUN docker-php-ext-install xml
