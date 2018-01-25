@@ -8,7 +8,10 @@ RUN curl -sL http://deb.nodesource.com/setup_6.x | bash - && \
     pecl install xdebug && \
     docker-php-ext-enable xdebug && \
     docker-php-ext-install bcmath pdo pdo_mysql intl && \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    pecl install -o -f redis && \
+    rm -rf /tmp/pear && \
+    docker-php-ext-enable redis
 
 RUN apt-get update && apt-get install -y \
         libmemcached11 \
@@ -33,3 +36,10 @@ RUN apt-get update && apt-get install -y \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libmagickwand-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pecl install imagick-3.4.3 && \
+    docker-php-ext-enable imagick
