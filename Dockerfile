@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# ImageMafick
+# ImageMagick
 RUN apt-get update && \
     apt-get install -y --no-install-recommends libmagickwand-dev && \
     rm -rf /var/lib/apt/lists/*
