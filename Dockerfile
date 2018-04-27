@@ -60,4 +60,4 @@ RUN docker-php-ext-install mbstring
 RUN docker-php-ext-install xml
 #RUN docker-php-ext-install xmlreader
 #RUN docker-php-ext-install xmlwriter
-RUN docker-php-ext-install zlib
+#RUN docker-php-ext-install zlib
