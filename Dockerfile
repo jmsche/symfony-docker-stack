@@ -47,7 +47,7 @@ RUN pecl install imagick-3.4.3 && \
     docker-php-ext-enable imagick
 
 # GD
-RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng12-dev
+RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install gd
 
