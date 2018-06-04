@@ -1,5 +1,6 @@
 FROM php:7.1
 
+RUN apt-get update && apt-get install -my wget gnupg # Fixes NodeJS key repo
 RUN curl -sL http://deb.nodesource.com/setup_8.x | bash - && \
     curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
