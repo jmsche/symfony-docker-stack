@@ -1,4 +1,4 @@
-FROM php:7.1
+FROM php:7.2
 
 RUN apt-get update && apt-get install -my wget gnupg # Fixes NodeJS key repo
 RUN curl -sL http://deb.nodesource.com/setup_8.x | bash - && \
