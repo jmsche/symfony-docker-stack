@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
         libmemcachedutil2 \
         libmemcached-dev \
         libz-dev \
+        libzip-dev \
         git \
     && cd /root \
     && git clone https://github.com/php-memcached-dev/php-memcached \
