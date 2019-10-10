@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
         git \
     && cd /root \
     && git clone https://github.com/php-memcached-dev/php-memcached \
-    && git checkout tags/v3.1.3
+    && git checkout tags/v3.1.3 \
     && cd php-memcached \
     && phpize \
     && ./configure \
